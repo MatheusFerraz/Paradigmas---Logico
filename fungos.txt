@@ -1,0 +1,64 @@
+%%% Doencas
+
+:-op(900,xfx,[ehUmTipoDe,tem).
+
+doenca tem formaTransmissao.
+doenca tem sintoma.
+doenca tem medidasProfilaticas.
+doenca tem agenteCausador.
+
+%% Fungos
+% Aspergilose
+aspergilose ehUmTipoDe doenca.
+aspergilose tem agenteCausador=fungo.
+aspergilose tem formaTransmissao=alimento.
+aspergilose tem formaTransmissao=agua.
+aspergilose tem sintoma=vomito.
+aspergilose tem sintoma=diarreia.
+aspergilose tem sintoma=nausea.
+aspergilose tem medidasProfilaticas=lavarAlimento.
+aspergilose tem medidasProfilaticas=ferverAgua.
+
+% Candidiase
+candidiase ehUmTipoDe doenca.
+candidiase tem agenteCausador=fungo.
+candidiase tem formaTransmissao=relacaoSexualDesprotegida.
+candidiase tem formaTransmissao=antibioticos.
+candidiase tem formaTransmissao=diabetes.
+candidiase tem formaTransmissao=deficienciaSistemaImunologico.
+candidiase tem sintoma=dorBucal.
+candidiase tem sintoma=vermelhidaoBucal.
+candidiase tem sintoma=vermelhidaoGenital.
+candidiase tem medidasProfilaticas=evitarSexoDesprotegido.
+candidiase tem medidasProfilaticas=evitarBeijoPessoasDesconhecidas.
+
+% Criptococose
+criptococose ehUmTipoDe doenca.
+criptococose tem agenteCausador=fungo.
+criptococose tem formaTransmissao=inalacaoEsporos.
+criptococose tem sintoma=dorCabeca.
+criptococose tem sintoma=nausea.
+criptococose tem sintoma=vomito.
+criptococose tem sintoma=fotofobia.
+criptococose tem medidasProfilaticas=evitarContatoDetritoPombo.
+
+% Dermatite Seborreica
+dermatiteSeborreica ehUmTipoDe doenca.
+dermatiteSeborreica tem agenteCausador=fungo.
+dermatiteSeborreica tem formaTransmissao=desconhecida.
+dermatiteSeborreica tem sintoma=vermelhidaoPele.
+dermatiteSeborreica tem sintoma=oleosidadePele.
+dermatiteSeborreica tem sintoma=inflamacaoPele.
+dermatiteSeborreica tem sintoma=coceira.
+dermatiteSeborreica tem medidasProfilaticas=evitarEstresse.
+dermatiteSeborreica tem medidasProfilaticas=lavarAdaquadamenteLocal.
+dermatiteSeborreica tem medidasProfilaticas=evitarAguaExcessivamenteQuente.
+dermatiteSeborreica tem medidasProfilaticas=evitarSonoInsatisfatorio.
+
+% Dermatofitose
+dermatofitose ehUmTipoDe doenca.
+dermatofitose tem agenteCausador=fungo.
+dermatofitose tem formaTransmissao=contatoDireto.
+dermatofitose tem sintoma=vermelhidaoGenitalFormaCircular.
+dermatofitose tem sintoma=coceiraPele.
+dermatofitose tem medidasProfilaticas=evitarUmidadePele.
