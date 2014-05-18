@@ -20,7 +20,7 @@ main():-
 % Gerando o Canvas do Projeto, Main da Interface Grafica
 canvas():-
 	% Selecionando por Termos
-	wcreate(main,user,`BCD - Banco de Conhecimento de Doencas`,0,0,640,480,0),
+	wcreate(main,user,`BCD - Banco de Conhecimento de Doencas`,0,0,640,480,0),	
 	wcreate((main,100),static,`Escolha um dos seguintes campos:`,0,150,200,15,16'50000001),
 	wcreate((main,1),button,`Nome da Doenca`,10,170,100,20,16'50010009),
 	wcreate((main,2),button,`Transmissao`,120,170,100,20,16'50010009),
@@ -30,7 +30,7 @@ canvas():-
 	% Mostrando o Resultado, ao clicar em um membro da Lista e no botao, o texto aparece no campo.
 	wcreate((main,10),listbox,``,10,220,100,200,16'50a10002),
 	wcreate((main,11),static,``,130,210,400,200,16'50800001),
-	wcreate((main,12),button,`Confirmar`,30,410,60,20,16'50010000),
+	wcreate((main,12),button,`Confirmar`,30,410,120,20,16'50010009),
 	mainloop().
 	
 mainloop():-
@@ -62,7 +62,12 @@ campoD():-
 
 campoE():-
 	wbtnsel((main,5),S),
-	ifThenElse(S=:=1,listaProf(),mainloop()).	
+	ifThenElse(S=:=1,listaProf(),confirmar()).
+
+confirmar():-
+	wbtnsel((main,12),S),
+	ifThenElse(S=:=1,verLista(0),mainloop()).
+	
 
 listaNome():-
 	wcreate((main,10),listbox,``,10,220,100,200,16'50a10002),
@@ -104,5 +109,21 @@ compoeRLista(K):-
 	wlbxadd((main,10),-1,A),
 	ifThenElse(B==[],reset(),compoeRLista(B)).
 	
+verLista(N):-
+	wlbxsel((main,10),N,S),
+	K is N+1,
+	ifThenElse(S=:=0,verLista(K),verNoA(N)).
+	
+verNoA(X):-
+	wbtnsel((main,12),0),
+	wlbxget((main,10),X,S),
+	ifThenElse(S==`Caxumba`,doencaA(),verNoB(S)).
+	
+verNoB(N):-
+	mainloop().
+	
+doencaA():-
+	wcreate((main,11),static,`Caxumba~M~ Agente Causador: Virus~M~ Formas de Transmissao: Saliva, Uso comum de copos~M~ Sintoma: Inflamacao das parotidas~M~ Medidas Profilaticas: Vacinacao e evitar contato com doentes`,130,210,400,200,16'50800001),
+	mainloop().
 helpcomandos():-
 	wcreate(help,text,`BCD - Guia de Comandos`,0,0,640,480,0).
