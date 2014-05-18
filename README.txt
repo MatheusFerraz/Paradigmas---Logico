@@ -11,4 +11,4 @@ Orientadora: Milene Serrano
 
 Tema:
 
-Base de Conhecimento sobre Doenças
+Base de Conhecimento sobre Doenças - Rede Semântica
