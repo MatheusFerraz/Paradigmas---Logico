@@ -6,7 +6,7 @@ Jonathan Moraes
 Matheus Ferraz
 Rudmar Rodrigues
 
-Disciplinas: Paradigmas de Programação
+Disciplina: Paradigmas de Programação
 Orientadora: Milene Serrano
 
 Tema:
