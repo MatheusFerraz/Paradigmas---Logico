@@ -1,6 +1,7 @@
 Universidade de Brasilia - FGA
 
-Estudantes: 
+Estudantes:
+
 Augusto Modesto
 Jonathan Moraes
 Matheus Ferraz
