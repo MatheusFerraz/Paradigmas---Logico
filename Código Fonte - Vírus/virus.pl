@@ -1,4 +1,4 @@
-:-op(900,xfx,[ehUmTipoDe, tem])
+:-op(900,xfx,[ehUmTipoDe, tem]).
 
 doenca tem formaTransmissao.
 doenca tem sintoma.
