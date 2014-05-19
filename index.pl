@@ -14,13 +14,15 @@ listSplit([H|T], H, T).
 main():-
 	consult('.\listas.pl'),
 	consult('.\virus.pl'),
+	consult('.\loop.pl'),
 	msgbox(`Bem-Vindo!`,`Deseja utilizar o BCD pela Interface Grafica?`,68,Code),
 	ifThenElse(Code=:=6,canvas(),helpcomandos()).
 
 % Gerando o Canvas do Projeto, Main da Interface Grafica
 canvas():-
 	% Selecionando por Termos
-	wcreate(main,user,`BCD - Banco de Conhecimento de Doencas`,0,0,640,480,0),	
+	wcreate(main,user,`BCD - Banco de Conhecimento de Doencas`,0,0,640,480,0),
+	wcreate((main,30),static,`~M~ ~M~ ~M~ ~M~ ~M~ ~M~ Bem-Vindo ao Painel Interativo do Doencas.Log! ~M~ Para acessar nosso glossario escolha um dos topicos abaixo, selecione um termo da lista e pressione confirmar.`,0,0,640,200,16'50000001),
 	wcreate((main,100),static,`Escolha um dos seguintes campos:`,0,150,200,15,16'50000001),
 	wcreate((main,1),button,`Nome da Doenca`,10,170,100,20,16'50010009),
 	wcreate((main,2),button,`Transmissao`,120,170,100,20,16'50010009),
@@ -32,98 +34,8 @@ canvas():-
 	wcreate((main,11),static,``,130,210,400,200,16'50800001),
 	wcreate((main,12),button,`Confirmar`,30,410,120,20,16'50010009),
 	mainloop().
-	
-mainloop():-
-	campoA().
-	
-reset():-
-	wbtnsel((main,1),0),
-	wbtnsel((main,2),0),
-	wbtnsel((main,3),0),
-	wbtnsel((main,4),0),
-	wbtnsel((main,5),0),
-	mainloop().
 
-campoA():-
-	wbtnsel((main,1),S),
-	ifThenElse(S=:=1,listaNome(),campoB()).
-
-campoB():-
-	wbtnsel((main,2),S),
-	ifThenElse(S=:=1,listaTrans(),campoC()).
-
-campoC():-
-	wbtnsel((main,3),S),
-	ifThenElse(S=:=1,listaCausa(),campoD()).
-
-campoD():-
-	wbtnsel((main,4),S),
-	ifThenElse(S=:=1,listaSint(),campoE()).
-
-campoE():-
-	wbtnsel((main,5),S),
-	ifThenElse(S=:=1,listaProf(),confirmar()).
-
-confirmar():-
-	wbtnsel((main,12),S),
-	ifThenElse(S=:=1,verLista(0),mainloop()).
-	
-
-listaNome():-
-	wcreate((main,10),listbox,``,10,220,100,200,16'50a10002),
-	wcreate((main,11),static,``,130,210,400,200,16'50800001),
-	setof(X,par(doenca,X),L),
-	compoeLista(L).
-
-listaTrans():-
-	wcreate((main,10),listbox,``,10,220,300,200,16'50a10002),
-	wcreate((main,11),static,``,330,210,280,200,16'50800001),
-	setof(X,par(formaTransmissao,X),L),
-	compoeLista(L).
-	
-listaCausa():-
-	wcreate((main,10),listbox,``,10,220,100,200,16'50a10002),
-	wcreate((main,11),static,``,130,210,400,200,16'50800001),
-	setof(X,par(agenteCausador,X),L),
-	compoeLista(L).
-
-listaSint():-
-	wcreate((main,10),listbox,``,10,220,200,200,16'50a10002),
-	wcreate((main,11),static,``,230,210,380,200,16'50800001),
-	setof(X,par(sintoma,X),L),
-	compoeLista(L).
-
-listaProf():-
-	wcreate((main,10),listbox,``,10,220,200,200,16'50a10002),
-	wcreate((main,11),static,``,230,210,380,200,16'50800001),
-	setof(X,par(medidasProfilaticas,X),L),
-	compoeLista(L).
-	
-compoeLista(T):-
-	listSplit(T,A,B),
-	wlbxadd((main,10),0,A),
-	ifThenElse(B==[],reset(),compoeRLista(B)).
-
-compoeRLista(K):-
-	listSplit(K,A,B),
-	wlbxadd((main,10),-1,A),
-	ifThenElse(B==[],reset(),compoeRLista(B)).
-	
-verLista(N):-
-	wlbxsel((main,10),N,S),
-	K is N+1,
-	ifThenElse(S=:=0,verLista(K),verNoA(N)).
-	
-verNoA(X):-
-	wbtnsel((main,12),0),
-	wlbxget((main,10),X,S),
-	ifThenElse(S==`Caxumba`,doencaA(),verNoB(S)).
-	
-verNoB(N):-
-	mainloop().
-	
-doencaA():-
-	wcreate((main,11),static,`Caxumba~M~ Agente Causador: Virus~M~ Formas de Transmissao: Saliva, Uso comum de copos~M~ Sintoma: Inflamacao das parotidas~M~ Medidas Profilaticas: Vacinacao e evitar contato com doentes`,130,210,400,200,16'50800001),
-	mainloop().
 helpcomandos():-
-	wcreate(help,text,`BCD - Guia de Comandos`,0,0,640,480,0).
+	wcreate(help,user,`BCD - Guia de Comandos`,0,0,640,480,0),
+	wcreate((help,1),static,`Escolha um dos seguintes campos:`,0,150,200,15,16'50000001).
+	
