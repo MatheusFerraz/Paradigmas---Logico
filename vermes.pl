@@ -31,3 +31,34 @@ ascaridiase tem sintoma=dificuldadeEmEvacuar.
 ascaridiase tem medidasProfilaticas=medicamentoAlbendazol.
 ascaridiase tem medidasProfilaticas=boaHigienePessoal.
 ascaridiase tem medidasProfilaticas=evitarAndarDescalco.
+
+% Oxiuriase
+oxiuriase ehUmTipoDe doenca.
+oxiuriase tem agenteCausador=verme.
+oxiuriase tem formaTransmissao=alimentosContaminados.
+oxiuriase tem sintoma=coceiraNoAnus.
+oxiuriase tem sintoma=diarreia.
+oxiuriase tem medidasProfilaticas=habitosDeHigiene.
+oxiuriase tem medidasProfilaticas=alimentosBemCozidos.
+
+% Teniase ou Solitaria
+teniase ehUmTipoDe doenca.
+teniase tem agenteCausador=verme.
+teniase tem formaTransmissao=consumirCarneBovinaContaminada
+teniase tem formaTransmissao=consumirCarneSuinaContaminada.
+teniase tem sintoma=diarreiaFrequenteOuPrisaoDeVentre.
+teniase tem sintoma=faltaOuAumentoDoApetite.
+teniase tem sintoma=cansacoOuInsonia.
+teniase tem medidasProfilaticas=medicamentoAlbendazol.
+
+
+% Esquistossomose ou barriga dagua
+esquistossomose ehUmTipoDe doenca.
+esquistossomose tem agenteCausador=verme.
+esquistossomose tem formaTransmissao=consumirAguaContaminada.
+esquistossomose tem sintoma=vomitos.
+esquistossomose tem sintoma=hemorragias.
+esquistossomose tem sintoma=convulsoes.
+esquistossomose tem medidasProfilaticas=medicamentoPraziquantel.
+esquistossomose tem medidasProfilaticas=contatoComAguaDasChuvas.
+esquistossomose tem medidasProfilaticas=habitosDeHigiene.
