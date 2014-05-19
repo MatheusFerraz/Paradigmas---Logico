@@ -13,7 +13,6 @@ doenca tem medidasProfilaticas.
 amarelao ehUmTipoDe doenca.
 amarelao tem agenteCausador=verme.
 amarelao tem formaTransmissao=fezesNoSolo.
-amarelao tem formaTransmissao=temperaturaQuente.
 amarelao tem sintoma=coceiraAcentuada.
 amarelao tem sintoma=manchasVermelhas.
 amarelao tem sintoma=doresDeBarriga.
