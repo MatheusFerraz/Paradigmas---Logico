@@ -19,7 +19,7 @@ amarelao tem sintoma=manchasVermelhas.
 amarelao tem sintoma=doresDeBarriga.
 amarelao tem medidasProfilaticas=medicamentoBefenio.
 amarelao tem medidasProfilaticas=medicamentoPirante.
-amarelao tem medidasProfilaticas=andarSempreCalçado.
+amarelao tem medidasProfilaticas=evitarAndarDescalco.
 
 % Ascaridiase
 ascaridiase ehUmTipoDe doenca.
@@ -44,7 +44,7 @@ oxiuriase tem medidasProfilaticas=alimentosBemCozidos.
 % Teniase ou Solitaria
 teniase ehUmTipoDe doenca.
 teniase tem agenteCausador=verme.
-teniase tem formaTransmissao=consumirCarneBovinaContaminada
+teniase tem formaTransmissao=consumirCarneBovinaContaminada.
 teniase tem formaTransmissao=consumirCarneSuinaContaminada.
 teniase tem sintoma=diarreiaFrequenteOuPrisaoDeVentre.
 teniase tem sintoma=faltaOuAumentoDoApetite.
