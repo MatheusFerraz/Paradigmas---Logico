@@ -46,7 +46,7 @@ criptococose tem medidasProfilaticas=evitarContatoDetritoPombo.
 dermatiteSeborreica ehUmTipoDe doenca.
 dermatiteSeborreica tem agenteCausador=fungo.
 dermatiteSeborreica tem formaTransmissao=desconhecida.
-dermatiteSeborreica tem sintoma=vermelhidaoPele.
+dermatiteSeborreica tem sintoma=vermelhidaPele.
 dermatiteSeborreica tem sintoma=oleosidadePele.
 dermatiteSeborreica tem sintoma=inflamacaoPele.
 dermatiteSeborreica tem sintoma=coceira.
